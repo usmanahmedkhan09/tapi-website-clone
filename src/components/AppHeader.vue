@@ -1,13 +1,16 @@
 <template>
   <header class="header">
     <div class="topbar">
-      <span class="topbar-text">🎉 Up to 4 years Interest Free Credit — 0% APR, no deposit.</span>
+      <span class="topbar-text">Supply & fitting available — Specialists in carpet, laminate, LVT & vinyl.</span>
       <a href="#">T&Cs apply →</a>
     </div>
 
     <nav class="nav">
       <div class="container nav-inner">
-        <RouterLink to="/" class="logo" @click="closeMenu">tapi<span>.</span></RouterLink>
+        <RouterLink to="/" class="logo" @click="closeMenu">
+          <span class="logo-az">AZ</span>
+          <span class="logo-name">Carpet's & Flooring</span>
+        </RouterLink>
 
         <div class="nav-links" :class="{ open: menuOpen }">
           <RouterLink v-for="cat in categories" :key="cat.id"
@@ -135,17 +138,38 @@ watch(menuOpen, (open) => {
 }
 
 .logo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-shrink: 1;
+  min-width: 0;
+  line-height: 1.1;
+}
+.logo-az {
   font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--tapi-red);
   letter-spacing: 1px;
   flex-shrink: 0;
 }
-.logo span { color: var(--tapi-red); }
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 480px) {
+  .logo-name { font-size: 15px; }
+}
 
 @media (min-width: 768px) {
-  .logo { font-size: 28px; }
+  .logo-az { font-size: 30px; }
+  .logo-name { font-size: 17px; }
 }
 
 /* Mobile nav drawer */
@@ -207,7 +231,7 @@ watch(menuOpen, (open) => {
   transition: all var(--transition);
 }
 .nav-link:hover, .nav-link.router-link-active { color: white; background: rgba(255,255,255,0.08); }
-.nav-link--offers { color: #ffd0d6; }
+.nav-link--offers { color: #e8d48a; }
 
 @media (min-width: 1024px) {
   .nav-link { font-size: 13px; padding: 6px 10px; }

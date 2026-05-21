@@ -2,8 +2,8 @@
   <div class="stores-page">
     <div class="stores-hero">
       <div class="container">
-        <h1 class="section-title">Find a store near you</h1>
-        <p class="section-sub">220+ showrooms nationwide. Or book a home visit — we'll bring the samples to you.</p>
+        <h1 class="section-title">Get in touch</h1>
+        <p class="section-sub">Contact AZ Carpet's & Flooring — we'll bring samples to you and provide a free quote.</p>
         <div class="search-box">
           <input v-model="searchQuery" type="text" placeholder="Enter your postcode or town..." />
           <button class="btn-primary">Search</button>
@@ -202,7 +202,7 @@ function submitBooking() {
   .store-card { flex-wrap: nowrap; gap: 16px; }
 }
 .store-card:hover { border-color: var(--tapi-red); }
-.store-card.active { border-color: var(--tapi-red); background: #fce8eb; }
+.store-card.active { border-color: var(--tapi-red); background: #f5edd4; }
 .store-icon { font-size: 24px; flex-shrink: 0; }
 .store-info { flex: 1; }
 .store-info h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }

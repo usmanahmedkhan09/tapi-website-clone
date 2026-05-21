@@ -3,9 +3,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --tapi-red: #c8102e;
-  --tapi-red-dark: #a00d24;
-  --tapi-black: #1a1a1a;
+  --tapi-red: #c9a227;
+  --tapi-red-dark: #a8861e;
+  --tapi-black: #0a0a0a;
   --tapi-dark: #2d2d2d;
   --tapi-gray: #f5f3f0;
   --tapi-gray-2: #ece9e4;
@@ -115,7 +115,7 @@ img { display: block; width: 100%; object-fit: cover; }
   border-radius: 100px;
   letter-spacing: 0.3px;
 }
-.tag.red { background: #fce8eb; color: var(--tapi-red); }
+.tag.red { background: #f5edd4; color: var(--tapi-red); }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.25s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; }

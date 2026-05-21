@@ -28,17 +28,15 @@ export const reviews = [
 ]
 
 export const services = [
-  { icon: '📐', title: 'Free measuring & planning', desc: 'Expert help at every step of your project' },
-  { icon: '🚐', title: 'Home visit service', desc: '230+ mobile showrooms travel to your door' },
-  { icon: '💳', title: '0% interest-free credit', desc: 'Up to 4 years, no deposit, no extra cost' },
-  { icon: '🛡️', title: 'Wear guarantee', desc: 'Peace of mind on every floor we sell' },
+  { icon: '📐', title: 'Supply & fitting available', desc: 'Professional installation for every flooring type' },
+  { icon: '🧶', title: 'Carpet & laminate specialists', desc: 'All types of carpet and laminate flooring' },
+  { icon: '✨', title: 'Carpet tiles & LVT', desc: 'Carpet tiles and luxury vinyl tile options' },
+  { icon: '🪟', title: 'Vinyl flooring', desc: 'Practical, durable vinyl for any room' },
 ]
 
 export const stores = [
-  { id: 1, name: 'Tapi London Bridge', address: '15 Tooley Street, London SE1 2PF', phone: '020 7403 1234', hours: 'Mon–Sat 9–6, Sun 10–5', distance: '0.3 miles' },
-  { id: 2, name: 'Tapi Bromley', address: '42 High Street, Bromley BR1 1DY', phone: '020 8464 5678', hours: 'Mon–Sat 9–6, Sun 10–4', distance: '8.2 miles' },
-  { id: 3, name: 'Tapi Croydon', address: '101 Church Street, Croydon CR0 1RF', phone: '020 8688 9012', hours: 'Mon–Sat 9–6, Sun 10–5', distance: '11.5 miles' },
-  { id: 4, name: 'Tapi Kingston', address: '55 London Road, Kingston KT2 6QE', phone: '020 8546 3456', hours: 'Mon–Sat 9–6, Sun 10–5', distance: '14.1 miles' },
+  { id: 1, name: "AZ Carpet's & Flooring", address: 'Contact us for your nearest service area', phone: '07762341752', hours: 'Mon–Sat 9–6', distance: '—' },
+  { id: 2, name: "AZ Carpet's & Flooring", address: 'WhatsApp: 07594095455', phone: '07594095455', hours: 'Available 7 days', distance: '—' },
 ]
 
 export const inspiration = [

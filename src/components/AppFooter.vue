@@ -3,8 +3,16 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="logo">tapi<span>.</span></div>
-          <p>Experts in beautiful flooring since 2015. Over 220 stores nationwide and 230+ mobile showrooms across the country.</p>
+          <div class="logo">
+            <span class="logo-az">AZ</span>
+            <span class="logo-name">Carpet's & Flooring</span>
+          </div>
+          <p>Supply and fitting available. Specialists in all types of carpet, laminate, carpet tiles, LVT and vinyl flooring.</p>
+          <div class="contact-links">
+            <a href="mailto:azcarpet1@gmail.com">azcarpet1@gmail.com</a>
+            <a href="tel:07762341752">07762 341752</a>
+            <a href="tel:07594095455">07594 095455</a>
+          </div>
           <div class="socials">
             <a href="#" aria-label="Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -36,7 +44,7 @@
 
         <div class="footer-col">
           <h4>Help & info</h4>
-          <a href="#">About Tapi</a>
+          <a href="#">About us</a>
           <RouterLink to="/ideas">Ideas Hub</RouterLink>
           <a href="#">Contact us</a>
           <a href="#">FAQs</a>
@@ -46,7 +54,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Tapi Carpets & Floors Ltd. All rights reserved.</p>
+        <p>© 2026 AZ Carpet's & Flooring. All rights reserved.</p>
         <div class="payment-icons">
           <span class="pill">Visa</span>
           <span class="pill">Mastercard</span>
@@ -96,14 +104,37 @@ import { categories } from '../data/dummy.js'
   }
 }
 .logo {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 600;
-  color: white;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   margin-bottom: 14px;
+  flex-wrap: wrap;
 }
-.logo span { color: var(--tapi-red); }
-.footer-brand p { font-size: 13px; line-height: 1.7; max-width: 100%; margin-bottom: 20px; }
+.logo-az {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--tapi-red);
+}
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+.footer-brand p { font-size: 13px; line-height: 1.7; max-width: 100%; margin-bottom: 16px; }
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.contact-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--transition);
+}
+.contact-links a:hover { color: var(--tapi-red); }
 
 @media (min-width: 1024px) {
   .footer-brand p { max-width: 220px; }

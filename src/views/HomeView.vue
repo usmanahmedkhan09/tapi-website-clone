@@ -6,15 +6,15 @@
         <div class="hero-content">
           <div class="hero-eyebrow">New Season Collection 2026</div>
           <h1 class="hero-title">Beautiful flooring,<br><em>perfectly priced</em></h1>
-          <p class="hero-desc">From carpets to luxury vinyl — expert advice, free measuring and professional fitting across 220+ stores nationwide.</p>
+          <p class="hero-desc">From carpets to luxury vinyl — supply and fitting available. Specialists in carpet, laminate, carpet tiles, LVT and vinyl.</p>
           <div class="hero-btns">
             <RouterLink to="/products" class="btn-primary">Shop all flooring →</RouterLink>
             <RouterLink to="/stores" class="btn-outline-white">Book home visit</RouterLink>
           </div>
           <div class="hero-stats">
-            <div class="stat"><strong>220+</strong><span>UK stores</span></div>
+            <div class="stat"><strong>Supply</strong><span>& fitting</span></div>
             <div class="stat-divider"></div>
-            <div class="stat"><strong>10k+</strong><span>products</span></div>
+            <div class="stat"><strong>All types</strong><span>of flooring</span></div>
             <div class="stat-divider"></div>
             <div class="stat"><strong>4.9★</strong><span>rated</span></div>
           </div>
@@ -24,8 +24,8 @@
             <div v-for="n in 48" :key="n" class="floor-cell" :style="floorStyle(n)"></div>
           </div>
           <div class="hero-badge-float">
-            <div class="hbf-label">0% credit</div>
-            <div class="hbf-sub">Up to 4 years</div>
+            <div class="hbf-label">Supply & fit</div>
+            <div class="hbf-sub">All flooring types</div>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
       <div class="container">
         <div class="promo-inner">
           <div class="promo-text">
-            <div class="section-label" style="color: #ffd0d6;">Limited time</div>
+            <div class="section-label" style="color: #e8d48a;">Limited time</div>
             <h2 class="promo-heading">Up to 40% off selected flooring</h2>
             <p style="color: rgba(255,255,255,0.75); font-size: 14px;">Free fitting included on orders over £500. Offer ends Sunday.</p>
           </div>
@@ -89,9 +89,9 @@
     <section class="services">
       <div class="container">
         <div class="section-header center">
-          <p class="section-label">Why Tapi</p>
-          <h2 class="section-title">The full Tapi experience</h2>
-          <p class="section-sub" style="margin: 0 auto;">We take care of everything from first inspiration right through to fitting and beyond.</p>
+          <p class="section-label">Why AZ</p>
+          <h2 class="section-title">The AZ difference</h2>
+          <p class="section-sub" style="margin: 0 auto;">We take care of everything from first inspiration right through to supply, fitting and beyond.</p>
         </div>
         <div class="services-grid">
           <div v-for="s in services" :key="s.title" class="service-card">

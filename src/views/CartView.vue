@@ -180,7 +180,7 @@ function tileColor(n, base) {
   .remove-btn { grid-column: auto; grid-row: auto; }
 }
 
-.remove-btn:hover { color: var(--tapi-red); background: #fce8eb; }
+.remove-btn:hover { color: var(--tapi-red); background: #f5edd4; }
 
 .cart-summary {
   background: var(--tapi-gray);

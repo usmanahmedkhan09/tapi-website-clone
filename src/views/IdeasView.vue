@@ -2,7 +2,7 @@
   <div class="ideas-page">
     <div class="ideas-hero">
       <div class="container">
-        <p class="section-label" style="color: #ffd0d6;">Ideas & inspiration</p>
+        <p class="section-label" style="color: #e8d48a;">Ideas & inspiration</p>
         <h1 class="ideas-title">The Ideas Hub</h1>
         <p style="color: rgba(255,255,255,0.65); font-size: 16px; max-width: 480px;">From clever carpet pairings to room transformations — let your imagination run wild.</p>
       </div>
