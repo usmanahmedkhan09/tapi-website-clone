@@ -97,7 +97,7 @@ function badgeClass(badge) {
 }
 
 .card-image {
-  height: 200px;
+  height: 180px;
   position: relative;
   display: flex;
   align-items: center;
@@ -141,9 +141,14 @@ function badgeClass(badge) {
   color: var(--tapi-muted);
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   transition: all var(--transition);
-  opacity: 0;
+  opacity: 1;
 }
-.product-card:hover .wishlist-btn { opacity: 1; }
+
+@media (min-width: 768px) {
+  .wishlist-btn { opacity: 0; }
+  .product-card:hover .wishlist-btn { opacity: 1; }
+  .card-image { height: 200px; }
+}
 .wishlist-btn.active { color: var(--tapi-red); opacity: 1; }
 .wishlist-btn:hover { transform: scale(1.1); }
 

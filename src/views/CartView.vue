@@ -75,7 +75,11 @@ function tileColor(n, base) {
 </script>
 
 <style scoped>
-.cart-page { padding: 40px 0 80px; }
+.cart-page { padding: 28px 0 48px; }
+
+@media (min-width: 768px) {
+  .cart-page { padding: 40px 0 80px; }
+}
 .section-title { margin-bottom: 32px; }
 
 .empty-cart {
@@ -87,15 +91,48 @@ function tileColor(n, base) {
 .empty-cart p { color: var(--tapi-muted); }
 
 .cart-layout {
-  display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .cart-layout { grid-template-columns: 1fr 300px; gap: 32px; }
+}
+
+@media (min-width: 1024px) {
+  .cart-layout { grid-template-columns: 1fr 340px; gap: 40px; }
 }
 
 .cart-item {
-  display: flex; align-items: center; gap: 20px;
-  padding: 20px 0; border-bottom: 1px solid var(--tapi-border);
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 12px 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--tapi-border);
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .cart-item {
+    display: flex;
+    gap: 20px;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+  }
 }
 .item-swatch {
-  width: 80px; height: 80px; border-radius: 10px; flex-shrink: 0; overflow: hidden;
+  width: 64px; height: 64px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  grid-row: span 2;
+}
+
+@media (min-width: 640px) {
+  .item-swatch { width: 80px; height: 80px; grid-row: auto; }
 }
 .mini-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; width: 100%; height: 100%; }
 .mini-tile {}
@@ -105,14 +142,44 @@ function tileColor(n, base) {
 .item-meta { font-size: 13px; color: var(--tapi-muted); margin-top: 4px; }
 
 .item-qty {
-  display: flex; align-items: center; gap: 12px;
-  border: 1px solid var(--tapi-border); border-radius: 8px; overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--tapi-border);
+  border-radius: 8px;
+  overflow: hidden;
+  grid-column: 2;
 }
 .item-qty button { padding: 8px 14px; background: var(--tapi-gray); font-size: 16px; cursor: pointer; }
 .item-qty span { min-width: 50px; text-align: center; font-size: 14px; }
 
-.item-total { font-size: 16px; font-weight: 600; min-width: 80px; text-align: right; }
-.remove-btn { background: none; color: var(--tapi-muted); padding: 8px; border-radius: 8px; transition: all var(--transition); }
+.item-total {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+@media (min-width: 640px) {
+  .item-total { min-width: 80px; grid-column: auto; grid-row: auto; }
+}
+
+.remove-btn {
+  background: none;
+  color: var(--tapi-muted);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all var(--transition);
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: end;
+}
+
+@media (min-width: 640px) {
+  .remove-btn { grid-column: auto; grid-row: auto; }
+}
+
 .remove-btn:hover { color: var(--tapi-red); background: #fce8eb; }
 
 .cart-summary {
@@ -120,7 +187,10 @@ function tileColor(n, base) {
   border-radius: var(--radius-lg);
   padding: 24px;
   border: 1px solid var(--tapi-border);
-  position: sticky; top: 80px;
+}
+
+@media (min-width: 768px) {
+  .cart-summary { position: sticky; top: 80px; }
 }
 .cart-summary h3 { font-size: 16px; font-weight: 600; margin-bottom: 20px; }
 .summary-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 12px; }

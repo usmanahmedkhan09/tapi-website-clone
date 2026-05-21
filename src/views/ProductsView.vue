@@ -13,8 +13,13 @@
     </div>
 
     <div class="container products-layout">
+      <button class="filters-toggle" @click="filtersOpen = !filtersOpen">
+        {{ filtersOpen ? 'Hide filters' : 'Filter & sort' }}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      </button>
+
       <!-- Sidebar filters -->
-      <aside class="filters">
+      <aside class="filters" :class="{ open: filtersOpen }">
         <div class="filter-header">
           <h3>Filter & sort</h3>
           <button class="clear-btn" @click="clearFilters">Clear all</button>
@@ -94,6 +99,7 @@ import ProductCard from '../components/ProductCard.vue'
 import { categories, products } from '../data/dummy.js'
 
 const route = useRoute()
+const filtersOpen = ref(false)
 const selectedCategories = ref([])
 const maxPrice = ref(60)
 const minRating = ref(0)
@@ -139,32 +145,74 @@ function clearFilters() {
 <style scoped>
 .products-hero {
   background: var(--tapi-gray);
-  padding: 40px 0 32px;
+  padding: 28px 0 24px;
   border-bottom: 1px solid var(--tapi-border);
 }
+
+@media (min-width: 768px) {
+  .products-hero { padding: 40px 0 32px; }
+}
+
 .breadcrumb {
   display: flex; gap: 8px; align-items: center;
   font-size: 13px; color: var(--tapi-muted); margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 .breadcrumb a { color: var(--tapi-muted); }
 .breadcrumb a:hover { color: var(--tapi-red); }
 
 .products-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 40px;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-top: 16px;
+  padding-bottom: 48px;
   align-items: start;
 }
 
+.filters-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: white;
+  border: 1px solid var(--tapi-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tapi-text);
+}
+
+@media (min-width: 1024px) {
+  .filters-toggle { display: none; }
+  .products-layout {
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
 .filters {
-  position: sticky;
-  top: 80px;
+  display: none;
   background: white;
   border: 1px solid var(--tapi-border);
   border-radius: var(--radius-lg);
   padding: 20px;
+  margin-bottom: 20px;
+}
+.filters.open { display: block; }
+
+@media (min-width: 1024px) {
+  .filters {
+    display: block;
+    position: sticky;
+    top: 80px;
+    margin-bottom: 0;
+  }
 }
 .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .filter-header h3 { font-size: 15px; font-weight: 600; }
@@ -186,8 +234,20 @@ function clearFilters() {
 
 .products-main { min-width: 0; }
 .products-bar {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 640px) {
+  .products-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
 .results-count { font-size: 14px; color: var(--tapi-muted); }
 .results-count strong { color: var(--tapi-text); }
@@ -218,8 +278,16 @@ function clearFilters() {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 .no-results {
   text-align: center;

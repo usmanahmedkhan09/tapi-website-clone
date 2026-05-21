@@ -150,11 +150,24 @@ function tileColor(n, base) {
 .breadcrumb { display: flex; gap: 8px; font-size: 13px; color: var(--tapi-muted); margin-bottom: 32px; }
 .breadcrumb a:hover { color: var(--tapi-red); }
 
-.detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 64px; }
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .detail-layout { grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+}
+
+@media (min-width: 1024px) {
+  .detail-layout { gap: 56px; margin-bottom: 64px; }
+}
 
 .main-image {
   border-radius: var(--radius-lg);
-  height: 440px;
+  height: 280px;
   position: relative;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
@@ -185,15 +198,29 @@ function tileColor(n, base) {
 
 .detail-title {
   font-family: var(--font-display);
-  font-size: 36px; font-weight: 600;
+  font-size: 26px; font-weight: 600;
   margin-bottom: 12px; line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .detail-title { font-size: 32px; }
+  .main-image { height: 380px; }
+}
+
+@media (min-width: 1024px) {
+  .detail-title { font-size: 36px; }
+  .main-image { height: 440px; }
 }
 .rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
 .stars { color: #f5a623; font-size: 18px; letter-spacing: 2px; }
 .rating-text { font-size: 14px; color: var(--tapi-muted); }
 
 .price-block { display: flex; align-items: baseline; gap: 6px; margin-bottom: 20px; }
-.price-lg { font-size: 36px; font-weight: 700; color: var(--tapi-black); }
+.price-lg { font-size: 28px; font-weight: 700; color: var(--tapi-black); }
+
+@media (min-width: 768px) {
+  .price-lg { font-size: 36px; }
+}
 .price-unit { font-size: 15px; color: var(--tapi-muted); }
 .price-vat { font-size: 12px; color: var(--tapi-muted); }
 
@@ -209,7 +236,13 @@ function tileColor(n, base) {
 }
 .swatch-btn.active { outline-color: var(--tapi-red); outline-width: 2px; }
 
-.qty-row { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.qty-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
 .qty-label { font-size: 13px; color: var(--tapi-muted); }
 .qty-input { display: flex; align-items: center; border: 1.5px solid var(--tapi-border); border-radius: var(--radius); overflow: hidden; }
 .qty-input button { padding: 10px 16px; background: var(--tapi-gray); font-size: 18px; border: none; cursor: pointer; transition: background var(--transition); }
@@ -221,7 +254,20 @@ function tileColor(n, base) {
 .qty-total { font-size: 14px; color: var(--tapi-muted); }
 .qty-total strong { color: var(--tapi-black); }
 
-.cta-btns { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.cta-btns .btn-primary,
+.cta-btns .btn-secondary { justify-content: center; width: 100%; }
+
+@media (min-width: 480px) {
+  .cta-btns { flex-direction: row; flex-wrap: wrap; }
+  .cta-btns .btn-primary,
+  .cta-btns .btn-secondary { width: auto; }
+}
 .toast {
   background: #1a7a4a; color: white;
   font-size: 13px; font-weight: 500;
@@ -231,11 +277,34 @@ function tileColor(n, base) {
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
 
-.detail-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 20px; border-top: 1px solid var(--tapi-border); }
+.detail-perks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--tapi-border);
+}
+
+@media (min-width: 480px) {
+  .detail-perks { grid-template-columns: 1fr 1fr; }
+}
+
 .perk { font-size: 13px; color: var(--tapi-muted); display: flex; align-items: center; gap: 6px; }
 
 .related h2 { margin-bottom: 24px; }
-.related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .related-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
 
 .not-found { padding: 80px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 </style>

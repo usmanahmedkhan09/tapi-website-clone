@@ -3,7 +3,7 @@
     <div class="ideas-hero">
       <div class="container">
         <p class="section-label" style="color: #ffd0d6;">Ideas & inspiration</p>
-        <h1 style="font-family: var(--font-display); font-size: 48px; color: white; margin-bottom: 14px;">The Ideas Hub</h1>
+        <h1 class="ideas-title">The Ideas Hub</h1>
         <p style="color: rgba(255,255,255,0.65); font-size: 16px; max-width: 480px;">From clever carpet pairings to room transformations — let your imagination run wild.</p>
       </div>
     </div>
@@ -92,7 +92,24 @@ function pColor(n, base) {
 </script>
 
 <style scoped>
-.ideas-hero { background: var(--tapi-black); padding: 56px 0; margin-bottom: 0; }
+.ideas-hero { background: var(--tapi-black); padding: 36px 0; margin-bottom: 0; }
+.ideas-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .ideas-hero { padding: 48px 0; }
+  .ideas-title { font-size: 40px; }
+}
+
+@media (min-width: 1024px) {
+  .ideas-hero { padding: 56px 0; }
+  .ideas-title { font-size: 48px; }
+}
 .ideas-filter {
   display: flex; flex-wrap: wrap; gap: 10px;
   padding: 28px 0; border-bottom: 1px solid var(--tapi-border);
@@ -108,13 +125,26 @@ function pColor(n, base) {
 
 .ideas-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  gap: 20px;
-  margin-bottom: 64px;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 .idea-card { border-radius: var(--radius-lg); border: 1px solid var(--tapi-border); overflow: hidden; }
-.idea-card.large { grid-column: span 2; }
+.idea-card.large { grid-column: span 1; }
+
+@media (min-width: 640px) {
+  .ideas-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .idea-card.large { grid-column: span 2; }
+}
+
+@media (min-width: 1024px) {
+  .ideas-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+}
 .idea-img { height: 220px; overflow: hidden; }
 .idea-pattern { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; width: 100%; height: 100%; }
 .pattern-tile {}
@@ -126,13 +156,36 @@ function pColor(n, base) {
 
 .lookbook-section { margin-bottom: 64px; }
 .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
-.lookbook-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .lookbook-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+@media (min-width: 1024px) {
+  .lookbook-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+}
+
 .lookbook-card {
-  height: 260px; border-radius: var(--radius-lg); overflow: hidden;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   position: relative; display: flex; align-items: flex-end;
   cursor: pointer; transition: transform var(--transition);
 }
 .lookbook-card:hover { transform: scale(1.02); }
+
+@media (min-width: 768px) {
+  .lookbook-card { height: 240px; }
+}
+
+@media (min-width: 1024px) {
+  .lookbook-card { height: 260px; }
+}
 .lookbook-overlay {
   background: linear-gradient(transparent, rgba(0,0,0,0.7));
   padding: 20px 18px 18px; width: 100%; color: white;
