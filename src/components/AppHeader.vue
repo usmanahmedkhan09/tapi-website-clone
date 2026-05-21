@@ -1,9 +1,5 @@
 <template>
   <header class="header">
-    <div class="topbar">
-      <span class="topbar-text">Supply & fitting available — Specialists in carpet, laminate, LVT & vinyl.</span>
-      <a href="#">T&Cs apply →</a>
-    </div>
 
     <nav class="nav">
       <div class="container nav-inner">
@@ -60,7 +56,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { categories } from '../data/dummy.js'
 import { cart } from '../stores/cart.js'
