@@ -8,7 +8,7 @@
           <h1 class="hero-title">Beautiful flooring,<br><em>perfectly priced</em></h1>
           <p class="hero-desc">From carpets to luxury vinyl — supply and fitting available. Specialists in carpet, laminate, carpet tiles, LVT and vinyl.</p>
           <div class="hero-btns">
-            <RouterLink to="/products" class="btn-primary">Shop all flooring →</RouterLink>
+            <!-- <RouterLink to="/products" class="btn-primary">Shop all flooring →</RouterLink> -->
             <RouterLink to="/stores" class="btn-outline-white">Book home visit</RouterLink>
           </div>
           <div class="hero-stats">
@@ -49,14 +49,14 @@
               <p class="cat-name">{{ cat.name }}</p>
               <p class="cat-desc">{{ cat.desc }}</p>
             </div>
-            <div class="cat-count">{{ cat.count }} products →</div>
+            <!-- <div class="cat-count">{{ cat.count }} products →</div> -->
           </RouterLink>
         </div>
       </div>
     </section>
 
     <!-- Banner -->
-    <section class="promo-banner">
+    <!-- <section class="promo-banner">
       <div class="container">
         <div class="promo-inner">
           <div class="promo-text">
@@ -67,7 +67,7 @@
           <RouterLink to="/products" class="btn-white">Shop the sale →</RouterLink>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Featured products -->
     <section class="featured">
@@ -180,7 +180,7 @@
 <script setup>
 import { ref } from 'vue'
 import ProductCard from '../components/ProductCard.vue'
-import { categories, products, reviews, services, inspiration } from '../data/dummy.js'
+import { categories, inspiration, products, reviews, services } from '../data/dummy.js'
 
 const featuredProducts = products.slice(0, 4)
 const email = ref('')

@@ -5,8 +5,8 @@
         <h1 class="section-title">Get in touch</h1>
         <p class="section-sub">Contact AZ Carpet's & Flooring — we'll bring samples to you and provide a free quote.</p>
         <div class="search-box">
-          <input v-model="searchQuery" type="text" placeholder="Enter your postcode or town..." />
-          <button class="btn-primary">Search</button>
+          <!-- <input v-model="searchQuery" type="text" placeholder="Enter your postcode or town..." />
+          <button class="btn-primary">Search</button> -->
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <p>{{ selectedStore.address }}</p>
           <p>{{ selectedStore.hours }}</p>
           <div class="detail-btns">
-            <a :href="`tel:${selectedStore.phone}`" class="btn-secondary">Call store</a>
+            <!-- <a :href="`tel:${selectedStore.phone}`" class="btn-secondary">Call store</a> -->
             <button class="btn-primary" @click="showBooking = true">Book visit</button>
           </div>
         </div>
